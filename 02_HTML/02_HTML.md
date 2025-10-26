@@ -265,12 +265,19 @@ Tu ouvres dans ton navigateur :
 ## 🧠 11. Bonnes pratiques HTML5
 
 ✅ Toujours utiliser un `<!DOCTYPE html>`
+
 ✅ Indiquer la langue (`<html lang="fr">`)
+
 ✅ Fermer correctement les balises
+
 ✅ Indenter ton code pour qu’il soit lisible
+
 ✅ Utiliser les **balises sémantiques** plutôt que des `<div>` anonymes
+
 ✅ Décrire les images avec `alt`
+
 ✅ Ne jamais abuser des `<br>` pour faire de la mise en page (utilise le CSS)
+
 
 ---
 
