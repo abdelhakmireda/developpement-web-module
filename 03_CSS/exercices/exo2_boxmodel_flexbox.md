@@ -171,5 +171,3 @@ Flexbox permet de **distribuer et aligner les éléments facilement** dans un co
 
 ---
 
-
-Veux‑tu que je fasse ça ?
