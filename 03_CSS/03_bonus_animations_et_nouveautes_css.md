@@ -162,4 +162,3 @@ button:hover {
 
 ---
 
-Souhaites-tu que je te fasse une **mise en page Markdown complète et stylée (avec couleurs, emoji et sections bien séparées)** prête à copier dans ton cours ou GitHub ?
