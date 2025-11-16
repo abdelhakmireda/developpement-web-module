@@ -285,5 +285,253 @@ CSS Grid permet de créer **des mises en page sur deux dimensions** : lignes et 
 | Flexbox | 1D : ligne ou colonne  | [Item1][Item2][Item3]        |
 | Grid    | 2D : lignes + colonnes | [C1][C2][C3]<br>[C4][C5][C6] |
 
+
+# 🎓 **COURS COMPLET recap: Flexbox & CSS Grid (avec explications détaillées)**
+
 ---
+
+# 🟦 PARTIE 1 : Flexbox — Le système **1 dimension**
+
+## 🔍 Qu’est-ce que Flexbox ?
+
+Flexbox est un module CSS conçu pour organiser les éléments **sur un seul axe** :
+➡️ **horizontal (row)**
+ou
+➡️ **vertical (column)**
+
+### 🎯 Objectif :
+
+Aligner, distribuer l’espace, rendre les blocs adaptatifs.
+
+---
+
+## 📐 Schéma visuel Flexbox
+
+### En ligne (row) :
+
+```
+-----------------------------------------------------
+|  Item1  |  Item2  |   Item3   |     Item4         |
+-----------------------------------------------------
+```
+
+### En colonne (column) :
+
+```
+| Item1 |
+| Item2 |
+| Item3 |
+| Item4 |
+```
+
+---
+
+## 🧩 Propriétés principales Flexbox
+
+### 🎛️ Sur le conteneur :
+
+```css
+display: flex;
+flex-direction: row | column;
+justify-content: center | space-between | space-around;
+align-items: center | stretch | flex-start | flex-end;
+flex-wrap: wrap;
+gap: 10px;
+```
+
+### 🎛️ Sur les éléments :
+
+```css
+flex-grow: 1;
+flex-shrink: 0;
+flex-basis: 200px;
+order: 2;
+align-self: center;
+```
+
+---
+
+## 🧪 Exemple Flexbox simple
+
+```css
+.container {
+  display: flex;
+  gap: 10px;
+  justify-content: space-between;
+}
+
+.item {
+  background: #4da3ff;
+  padding: 20px;
+  color: white;
+}
+```
+
+---
+
+# 🟥 PARTIE 2 : CSS Grid — Le système **2 dimensions**
+
+## 🔍 Qu’est-ce que CSS Grid ?
+
+Grid permet de créer des **mises en page complètes**, avec un contrôle très précis des :
+✔️ colonnes
+✔️ lignes
+✔️ zones
+✔️ tailles
+
+C’est parfait pour les interfaces complexes.
+
+---
+
+## 📐 Schéma visuel Grid
+
+```
+-----------------------------------------
+|  item1  |  item2  |  item3  |
+-----------------------------------------
+|  item4  |  item5  |  item6  |
+-----------------------------------------
+```
+
+Contrairement à Flexbox, Grid gère les **lignes ET colonnes** en même temps.
+
+---
+
+# 🟧 PARTIE 3 : Comprendre `grid-template-columns: 1fr 1fr 1fr;`
+
+C’est l’une des propriétés **les plus importantes** de CSS Grid.
+
+---
+
+## 📌 1️⃣ `grid-template-columns`
+
+Signifie :
+➡️ *"Définis la largeur des colonnes de la grille."*
+
+---
+
+## 📌 2️⃣ `1fr 1fr 1fr`
+
+* **fr** = *fraction de l’espace disponible*
+* 1fr = 1 part
+* 1fr 1fr 1fr = 3 parts égales
+
+### 🧠 Ce que ça veut dire :
+
+👉 Tu crées **3 colonnes égales**
+👉 Chacune occupe **1/3** de la largeur disponible
+
+---
+
+## 🔍 Schéma clair de `1fr 1fr 1fr`
+
+Si le conteneur fait **900px** :
+
+```
+|----------900px-----------|
+|   300px |   300px | 300px |
+|    1fr  |    1fr  |  1fr  |
+```
+
+---
+
+## 🧪 Exemple complet avec 1fr
+
+```css
+.container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 15px;
+}
+
+.item {
+  background: #ff6f3c;
+  padding: 25px;
+  color: white;
+  font-size: 20px;
+  text-align: center;
+}
+```
+
+---
+
+# 🟩 PARTIE 4 : Grille complète avec lignes + colonnes
+
+### Exemple Grid plus avancé :
+
+```css
+.container {
+  display: grid;
+  grid-template-columns: 200px 1fr 2fr;
+  grid-template-rows: 100px auto;
+  gap: 20px;
+}
+```
+
+Schéma :
+
+```
+┌──────────┬──────────┬──────────────────┐
+│ 200px    │   1fr    │      2fr         │  ← colonnes
+├──────────┼──────────┼──────────────────┤
+│          │          │                  │
+│ 100px    │   auto   │      auto        │  ← lignes
+└──────────┴──────────┴──────────────────┘
+```
+
+---
+
+# 🟪 PARTIE 5 : Propriétés essentielles Grid (rappel)
+
+## 🎛️ Pour le conteneur :
+
+* `display: grid`
+* `grid-template-columns`
+* `grid-template-rows`
+* `grid-template-areas`
+* `gap`, `row-gap`, `column-gap`
+* `justify-items`
+* `align-items`
+* `justify-content`
+* `align-content`
+
+## 🎛️ Pour les items :
+
+* `grid-column: 1 / 3`
+* `grid-row: 2 / 4`
+* `grid-area`
+* `justify-self`
+* `align-self`
+
+---
+
+# 🟨 PARTIE 6 : Flexbox vs Grid — Le tableau ultra-simple
+
+| 🧩 Critère  | 🟦 Flexbox                | 🟥 Grid                           |
+| ----------- | ------------------------- | --------------------------------- |
+| Dimensions  | 1D (ligne **ou** colonne) | 2D (lignes **et** colonnes)       |
+| Usage idéal | Composants internes       | Layout complet d’une page         |
+| Alignement  | Très puissant             | Très précis                       |
+| Répartition | Dynamique                 | Structurée                        |
+| Placement   | Automatique               | Peut être manuel (zones, lignes…) |
+
+---
+
+# ⭐ PARTIE 7 : Résumé final du cours
+
+```
+Flexbox = axe unique  → aligner
+Grid    = grille 2D   → structurer
+```
+
+```
+grid-template-columns: 1fr 1fr 1fr;
+⟶ crée 3 colonnes égales
+⟶ chacune reçoit 1/3 de l’espace
+⟶ super flexible et responsive
+```
+
+---
+
+
 
