@@ -1,21 +1,5 @@
 
 
-📄 **01_JavaScript_Essentiels_Pour_Le_Web.md**
-
-Il combine :
-
-✔ L’introduction globale
-✔ Les mots essentiels (element, classList, events, const, let…)
-✔ Les sélecteurs
-✔ Les modifications d’éléments
-✔ Les events listeners
-✔ Les fonctions
-✔ Des exemples complets et prêts à copier
-
-Prêt ? Voici le cours 👇👇👇
-
----
-
 # 🌟 JavaScript Essentiel Pour Le Web
 
 *(Le guide parfait après HTML & CSS)*
